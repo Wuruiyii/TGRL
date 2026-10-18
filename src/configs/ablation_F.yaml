@@ -1,0 +1,11 @@
+model:
+  hidden_dim: 128
+  num_layers: 4
+  num_edge_types: 6
+  heterogeneous: true
+  temporal: true
+  hierarchical_action: true
+  separate_value: true
+training:
+  curriculum: false
+  priority_sampling: false

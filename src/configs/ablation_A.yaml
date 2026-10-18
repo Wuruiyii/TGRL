@@ -1,0 +1,12 @@
+# (A) Homogeneous static GNN + flat PPO
+model:
+  hidden_dim: 128
+  num_layers: 4
+  num_edge_types: 1
+  heterogeneous: false
+  temporal: false
+  hierarchical_action: false
+  separate_value: false
+training:
+  curriculum: false
+  priority_sampling: false

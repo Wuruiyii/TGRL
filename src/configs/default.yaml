@@ -1,0 +1,45 @@
+model:
+  hidden_dim: 128
+  num_layers: 4
+  num_edge_types: 6
+  num_node_types: 3
+  spectral_bound: 1.0
+  input_dims:
+    operation: 8
+    machine: 7
+    agv: 7
+
+training:
+  total_episodes: 20000
+  episodes_per_stage: 5000
+  learning_rate: 3.0e-4
+  lr_min: 1.0e-5
+  lr_schedule: cosine
+  clip_eps: 0.2
+  gae_lambda: 0.95
+  gamma: 0.99
+  scenarios_per_iteration: 32
+  minibatch_size: 256
+  ppo_epochs: 4
+  parallel_envs: 8
+  gradient_clip_norm: 0.5
+  entropy_coeff: 0.01
+  value_coeff: 0.5
+
+curriculum:
+  stages: [D0, D1, D2, D4]
+  pool_capacity: 2000
+  priority_beta: 0.6
+  priority_eps: 0.01
+
+reward:
+  alpha1: 1.0
+  alpha2: 0.5
+  alpha3: 0.3
+  alpha4: 10.0
+
+environment:
+  sliding_window: 20
+  congestion_lambda: 2.0
+  proximity_threshold: 3
+  due_date_kappa: 1.5
